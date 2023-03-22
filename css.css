@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+*{box-sizing: border-box;}
+:root{
+  --red: #fe5f5f;
+}
+body{
+  background: #202a2f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 97vh;
+  font-family: 'Poppins',sans-serif;
+}
+
+.wrap{
+  background: #ebfaf3;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border-radius: 20px;
+  border: 10px solid #474546;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+  padding: 20px 20px;
+  width: 430px;
+}
+
+
+#list{
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  list-style: none;
+  text-decoration: none;
+  color: #2f2f3e;
+  padding: 0;
+}
+#list li{
+  padding: 10px 15px;
+  border: 1px solid lightgray;
+  transition: 0.25s ease-out;
+  font-size: 17px;
+  font-weight: 400;
+  border-radius: 2px;
+  cursor: pointer;
+}
+#list li:not(.checked):hover{background: rgba(227, 212, 211, 0.26);}
+
+.checked{background: var(--red); color: #fff;}
+.checked:hover{background: #fb5454;}
+
+
+
+.row{
+  color: #2f2f3e;
+}
+.row label,.row input:not(#length){cursor: pointer;}
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label
+{
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    line-height: 20px;
+    display: inline-block;
+    color: #666;
+}
+[type="radio"]:checked + label:before,
+[type="radio"]:not(:checked) + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #ddd;
+    border-radius: 100%;
+    background: transparent;
+}
+[type="radio"]:checked + label:after,
+[type="radio"]:not(:checked) + label:after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: #F87DA9;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    border-radius: 100%;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+[type="radio"]:not(:checked) + label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+[type="radio"]:checked + label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+
+
+#length{
+  border: none;
+  border-bottom: 1px solid lightgray;
+  padding: 6px 4px 4px 5px;
+  transition: 0.25s;
+  font-family: 'Poppins',sans-serif;
+  color: #2f2f3e;
+  font-weight: 400;
+  font-size: 16px;
+  background: transparent;
+  width: 80px;
+  margin-left: 10px;
+  margin-top: -6px;
+}
+#length:focus{border-bottom: 1px solid var(--red); outline: none;}
+
+
+
+#generate,#copy{
+  font-size: 18px;
+  color: #fff;
+  font-weight: 400;
+  font-family: 'Poppins',sans-serif;
+  cursor: pointer;
+  transition: 0.25s;
+  width: 390px;
+  border-radius: 5px;
+  border: none;
+  background: var(--red);
+  margin-top: 8px;
+  padding: 10px 0;
+}
+#generate:hover{
+  background: #f64747;
+}
+
+
+
+
+.result{
+  display: flex;
+  flex-direction: row;
+  gap: 7px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.res{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px 10px 10px 15px;
+  border: 1px solid lightgray;
+  width: 290px;
+  overflow-x: auto;
+  color: #2f2f3e;
+  font-size: 16px;
+  min-height: 46px;
+}
+
+.res::-webkit-scrollbar {height: 4px;}
+.res::-webkit-scrollbar-track {-webkit-box-shadow: inset 0 0 4px #c8c8c8;}
+.res::-webkit-scrollbar-thumb {background-color: #27363d;}
+
+#result{white-space: pre;}
+
+#copy{
+  font-size: 15px;
+  font-weight: 300;
+  width: 90px;
+  background: #27363d;
+  margin-top: 0px;
+  padding: 0;
+  border-radius: 4px;
+  height: 46px;
+}
+#copy:hover{background: #303e45;}
+
+#copied{
+  color: var(--red);
+  position: absolute;
+  font-size: 14px;
+  font-weight: 400;
+  right: 10px;
+  bottom: -20px;
+  margin: auto;
+  transition: 0.4s;
+  opacity: 0;
+}
+
+
+
+
+
+@media (max-width:430px) {
+  .wrap{transform: scale(0.85);}
+}

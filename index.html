@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css.css">
+    <title>Password Generator</title>
+  </head>
+  <body>
+    <div class="wrap">
+      <ul id="list">
+        <li class="letter">Letter</li>
+        <li class="number">Number</li>
+        <li class="special">Special Chars</li>
+      </ul>
+
+      <div class="row">
+        <input type="radio" name="letter" id="rop1" value="Upper" disabled> <label for="rop1">Upper</label> &nbsp&nbsp
+        <input type="radio" name="letter" id="rop2" value="Lower" disabled> <label for="rop2">Lower</label> &nbsp&nbsp
+        <input type="radio" name="letter" id="rop3" value="Both" checked disabled> <label for="rop3">Both</label> &nbsp&nbsp
+        <input type="text" placeholder="Length" id="length" maxlength="2">
+      </div>
+
+      <button id="generate">Generate</button>
+
+
+      <div class="result">
+        <div class="res">
+          <span id="result"></span>
+        </div>
+        <button id="copy">Copy</button>
+        <span id="copied">Copied ✓</span>
+      </div>
+    </div>
+
+
+
+
+    <script src="script.js"></script>
+  </body>
+</html>
